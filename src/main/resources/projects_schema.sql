@@ -19,9 +19,9 @@ CREATE TABLE material (
 material_id INT AUTO_INCREMENT NOT NULL,
 project_id INT AUTO_INCREMENT NOT NULL,
 material_name VARCHAR(128) NOT NULL, 
-num_required INT *********************************************************
+num_required INT, 
 PRIMARY KEY (material_id),
-FOREIGN KEY (project_id) REFERENCES project (project_id) DELETE ON CASCADE*********************************************
+FOREIGN KEY (project_id) REFERENCES project (project_id) ON DELETE CASCADE
 );
 
 CREATE TABLE step (
@@ -30,7 +30,7 @@ project_id INT NOT NULL,
 step_text TEXT NOT NULL,
 step_order INT NOT NULL,
 PRIMARY KEY (step_id),
-FOREIGN KEY (project_id) REFERENCES project (project_id) DELETE ON CASCADE
+FOREIGN KEY (project_id) REFERENCES project (project_id) ON DELETE CASCADE
 );
 
 CREATE TABLE category (
